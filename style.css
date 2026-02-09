@@ -116,6 +116,26 @@ body{
   cursor:pointer;
 }
 
+.musicDetails{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  margin-top:8px;
+}
+
+.musicDetails h3{
+  font-size:16px;
+  margin-bottom:5px;
+  color:#333;
+}
+
+.musicControls{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+}
+
 /* HEART RAIN */
 #heartRain span{
   position:fixed;
@@ -126,3 +146,4 @@ body{
 @keyframes fall{
   to{transform:translateY(110vh);}
 }
+
