@@ -27,8 +27,23 @@ let songs=[
   new Audio("assets/song3.mp3")
 ]
 
+let timerIntervals = [];
+
 function playSong(i){
-  songs.forEach(s=>s.pause())
-  songs[i].currentTime=0
-  songs[i].play()
+  // Pause all songs
+  songs.forEach((s, index)=>{
+    s.pause();
+    clearInterval(timerIntervals[index]);
+  });
+
+  songs[i].currentTime = 0;
+  songs[i].play();
+
+  // Update timer
+  const timerEl = document.getElementById(`timer${i}`);
+  timerIntervals[i] = setInterval(()=>{
+    const min = Math.floor(songs[i].currentTime / 60);
+    const sec = Math.floor(songs[i].currentTime % 60).toString().padStart(2, '0');
+    timerEl.innerText = `${min}:${sec}`;
+  }, 500);
 }
