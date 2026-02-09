@@ -1,0 +1,129 @@
+*{
+  box-sizing:border-box;
+  font-family:'Patrick Hand', cursive;
+}
+
+body{
+  margin:0;
+  background:url("assets/bg-image.jpg") center/cover fixed;
+  overflow:hidden;
+}
+
+/* PAGE */
+.page{
+  display:none;
+  height:100vh;
+  width:100vw;
+  text-align:center;
+  padding:20px;
+}
+
+.page.active{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+
+/* GIF */
+.gif{
+  width:70%;
+  max-width:320px;
+}
+
+/* MENU GRID */
+.menuGrid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+  width:80%;
+  max-width:350px;
+  margin-top:20px;
+}
+
+.menuBtn{
+  padding:18px;
+  border:none;
+  border-radius:25px;
+  font-size:18px;
+  cursor:pointer;
+  transition: transform 0.3s ease;
+}
+
+.menuBtn:hover{
+  transform: scale(1.05);
+}
+
+.pink{background:#ffd6e8;}
+.purple{background:#e6d8ff;}
+.peach{background:#ffe3c4;}
+.mint{background:#d7f7ec;}
+
+/* YOU + ME - vertical scroll */
+.scroll-vertical{
+  display:flex;
+  flex-direction: column;
+  overflow-y:auto;
+  gap:20px;
+  height:70%;
+  padding-right:10px;
+  scroll-snap-type: y mandatory;
+}
+
+.scroll-vertical img{
+  height:280px;
+  border-radius:15px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  transform: rotate(calc(-5deg + 10deg * var(--i)));
+  scroll-snap-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.scroll-vertical img:hover{
+  transform: scale(1.05) rotate(calc(-5deg + 10deg * var(--i)));
+  box-shadow: 0 20px 30px rgba(0,0,0,0.25);
+}
+
+/* MUSIC */
+.musicCard{
+  position: relative;
+  display: inline-block;
+  margin: 20px;
+  cursor: pointer;
+  text-align:center;
+}
+
+.musicCard img{
+  width:250px;
+  border-radius:15px;
+}
+
+/* Music Controls below image */
+.musicControls{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  margin-top:8px;
+}
+
+.musicControls button{
+  padding:10px 15px;
+  font-size:16px;
+  border:none;
+  border-radius:50%;
+  background: rgba(255,255,255,0.9);
+  cursor:pointer;
+}
+
+/* HEART RAIN */
+#heartRain span{
+  position:fixed;
+  top:-20px;
+  animation:fall 6s linear;
+}
+
+@keyframes fall{
+  to{transform:translateY(110vh);}
+}
+
