@@ -1,0 +1,212 @@
+/* GENERAL RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Amatic SC', cursive;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  background: url('../images/bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+}
+
+.bg-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  backdrop-filter: blur(5px);
+  z-index: -1;
+}
+
+/* SCRAPBOOK PAPER */
+.scrapbook-paper {
+  max-width: 500px;
+  margin: auto;
+  background: rgba(255,255,255,0.9);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* PAGES */
+.page {
+  display: none;
+  animation: fadeIn 1s ease forwards;
+}
+.page.active {
+  display: block;
+}
+@keyframes fadeIn {
+  from {opacity: 0; transform: scale(0.95);}
+  to {opacity: 1; transform: scale(1);}
+}
+
+/* GIFS */
+.gif {
+  width: 90%;
+  max-width: 400px;
+  display: block;
+  margin: 20px auto;
+  border-radius: 15px;
+}
+
+/* HEART BUTTON */
+.heartBtn, .heart-gif {
+  display: block;
+  margin: 30px auto;
+  width: 120px;
+  cursor: pointer;
+  animation: pop 0.6s ease forwards;
+}
+@keyframes pop {
+  0% {transform: scale(0);}
+  60% {transform: scale(1.2);}
+  100% {transform: scale(1);}
+}
+
+/* GRID & CARDS */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+.card {
+  flex: 0 0 45%;
+  background: #fff0f7;
+  text-align: center;
+  padding: 15px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+  transform: scale(1.05) rotate(-1deg);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* SCROLL CONTAINERS */
+.scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 15px;
+  padding: 10px 0;
+}
+.scroll img {
+  max-height: 200px;
+  border-radius: 15px;
+  transition: transform 0.3s;
+}
+.scroll img:hover {
+  transform: rotate(-2deg) scale(1.05);
+}
+
+/* QUOTE CARDS */
+.quote-card {
+  min-width: 250px;
+  position: relative;
+  flex-shrink: 0;
+}
+.quote-card img {
+  width: 100%;
+  border-radius: 15px;
+}
+.quote-card p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 18px;
+  color: #000;
+  padding: 10px;
+}
+
+/* SONGS */
+.song {
+  position: relative;
+  margin: 15px auto;
+  max-width: 400px;
+  text-align: center;
+}
+.song button {
+  position: absolute;
+  top: 40%;
+  left: 45%;
+  background: rgba(255,255,255,0.8);
+  border: none;
+  border-radius: 50%;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 18px;
+}
+.song-quote {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 16px;
+  color: #000;
+}
+
+/* LETTERS */
+.letter {
+  display: block;
+  margin: 20px auto;
+  max-width: 300px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.letter-text {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #000;
+}
+
+/* BUTTONS */
+button {
+  background: #ffb6c1;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 15px;
+  margin: 15px auto;
+  display: block;
+  cursor: pointer;
+  font-size: 16px;
+  transition: transform 0.3s;
+}
+button:hover {
+  transform: scale(1.05);
+}
+
+/* GAME BUTTONS */
+.game-btn {
+  width: 120px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.game-btn:hover {
+  transform: scale(1.1) rotate(-2deg);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* HEART RAIN */
+#heartRain span {
+  position: fixed;
+  top: -50px;
+  font-size: 20px;
+  animation: fall 6s linear infinite;
+}
+@keyframes fall {
+  to {transform: translateY(110vh);}
+}
