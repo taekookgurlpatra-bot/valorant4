@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Ashraf 💗</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div id="heartRain"></div>
+
+<!-- INTRO -->
+<section class="page active">
+  <h2>Gathering sparkles 💗✨</h2>
+  <img src="assets/intro.gif" class="gif">
+</section>
+
+<!-- MENU -->
+<section class="page">
+  <img src="assets/main.gif" class="gif">
+  <p>Enjoy your presents qt 😘</p>
+
+  <div class="menuGrid">
+    <button class="menuBtn pink" onclick="go(2)">You + Me 💗</button>
+    <button class="menuBtn purple" onclick="go(3)">Fun Zone 🎮</button>
+    <button class="menuBtn peach" onclick="go(4)">Melodies 🎧</button>
+    <button class="menuBtn mint" onclick="go(5)">Promises 😋💗</button>
+  </div>
+</section>
+
+<!-- YOU + ME -->
+<section class="page">
+  <h2>Us 💗🫂</h2>
+
+  <div class="scroll-vertical">
+    <img src="assets/polaroid1.png" style="--i:0;">
+    <img src="assets/polaroid2.png" style="--i:1;">
+    <img src="assets/polaroid3.png" style="--i:2;">
+    <img src="assets/polaroid4.png" style="--i:3;">
+  </div>
+
+  <button onclick="go(1)">Back</button>
+</section>
+
+<!-- FUN ZONE -->
+<section class="page">
+  <h2>Mini Games 🎮</h2>
+  <p>Coming next step 😋✨</p>
+  <button onclick="go(1)">Back</button>
+</section>
+
+<!-- MUSIC -->
+<section class="page">
+  <h2>Songs that remind me of you 💗</h2>
+
+  <div class="musicCard">
+    <img src="assets/spotify1.png">
+    <div class="musicControls">
+      <button onclick="playSong(0)">▶</button>
+      <span id="timer0">0:00</span>
+    </div>
+  </div>
+
+  <div class="musicCard">
+    <img src="assets/spotify2.png">
+    <div class="musicControls">
+      <button onclick="playSong(1)">▶</button>
+      <span id="timer1">0:00</span>
+    </div>
+  </div>
+
+  <div class="musicCard">
+    <img src="assets/spotify3.png">
+    <div class="musicControls">
+      <button onclick="playSong(2)">▶</button>
+      <span id="timer2">0:00</span>
+    </div>
+  </div>
+
+  <button onclick="go(1)">Back</button>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
