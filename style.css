@@ -1,239 +1,258 @@
 *{
   box-sizing:border-box;
-  font-family:'Patrick Hand', cursive;
+  margin:0;
+  padding:0;
 }
 
+/* ---------- BODY / BACKGROUND ---------- */
+
 body{
-  margin:0;
   min-height:100vh;
   overflow:hidden;
   font-family:'Patrick Hand', cursive;
 
-  background-image: url("assets/bg-image.jpg?v=2");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-attachment: fixed;
-
-  background-color: #ffeef5;
+  background-image:url("assets/bg-image.jpg?v=2");
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size:contain;
+  background-attachment:fixed;
+  background-color:#ffeef5;
 }
 
-/* PAGE */
+/* Soft romantic overlay */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:rgba(255,240,245,0.25);
+  pointer-events:none;
+}
+
+/* ---------- PAGE SYSTEM ---------- */
+
 .page{
   display:none;
   height:100vh;
   width:100vw;
+
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
   text-align:center;
   padding:20px;
 }
 
 .page.active{
   display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
 }
 
-/* GIF */
+/* ---------- GIF ---------- */
+
 .gif{
-  width:70%;
-  max-width:320px;
+  max-width:80%;
+  margin:20px 0;
 }
 
-/* MENU GRID */
-.menuGrid{
+/* ---------- MENU GRID ---------- */
+
+.menu-grid{
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:15px;
-  width:80%;
-  max-width:350px;
+  grid-template-columns:repeat(2,1fr);
+  gap:25px;
   margin-top:20px;
+  width:80%;
+  max-width:500px;
 }
 
-.menuBtn{
-  padding:18px;
-  border:none;
-  border-radius:25px;
-  font-size:18px;
+.menu-card{
+  padding:25px 15px;
+  border-radius:22px;
   cursor:pointer;
-  transition: transform 0.3s ease;
+  transition:0.3s;
+  font-size:18px;
+  box-shadow:0 8px 18px rgba(0,0,0,0.15);
 }
 
-.menuBtn:hover{
-  transform: scale(1.05);
+/* Soft pastel button colors */
+
+.menu-card:nth-child(1){
+  background:#ffd6e8;
 }
 
-.pink{background:#ffd6e8;}
-.purple{background:#e6d8ff;}
-.peach{background:#ffe3c4;}
-.mint{background:#d7f7ec;}
+.menu-card:nth-child(2){
+  background:#e4dcff;
+}
 
-/* YOU + ME - vertical scroll */
-.scroll-vertical{
-  display:flex;
-  flex-direction: column;
+.menu-card:nth-child(3){
+  background:#dff7f1;
+}
+
+.menu-card:nth-child(4){
+  background:#ffe3d2;
+}
+
+.menu-card:hover{
+  transform:scale(1.05);
+}
+
+/* ---------- SCROLL CONTAINER ---------- */
+
+.scroll{
+  max-height:70vh;
   overflow-y:auto;
-  gap:20px;
-  height:70%;
-  padding-right:10px;
-  scroll-snap-type: y mandatory;
+  padding:15px;
+  width:100%;
 }
 
-.scroll-vertical img{
-  height:280px;
-  border-radius:15px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-  transform: rotate(calc(-5deg + 10deg * var(--i)));
-  scroll-snap-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* ---------- POLAROID STYLE ---------- */
+
+.scroll img{
+  width:260px;
+  margin:25px auto;
+  display:block;
+  border-radius:14px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.25);
+  transition:0.4s;
 }
 
-.scroll-vertical img:hover{
-  transform: scale(1.05) rotate(calc(-5deg + 10deg * var(--i)));
-  box-shadow: 0 20px 30px rgba(0,0,0,0.25);
+.scroll img:nth-child(odd){
+  transform:rotate(-4deg);
 }
 
-/* MUSIC */
-.musicCard{
-  position: relative;
-  display: inline-block;
-  margin: 20px;
-  cursor: pointer;
+.scroll img:nth-child(even){
+  transform:rotate(4deg);
+}
+
+.scroll img:hover{
+  transform:scale(1.05);
+}
+
+/* ---------- SONG SECTION ---------- */
+
+.song-card{
+  margin:30px auto;
+  width:260px;
   text-align:center;
 }
 
-.musicCard img{
-  width:250px;
-  border-radius:15px;
+.song-card img{
+  width:100%;
+  border-radius:18px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.2);
 }
 
-/* Music Controls below image */
-.musicControls{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:10px;
-  margin-top:8px;
+.song-controls{
+  margin-top:10px;
 }
 
-.musicControls button{
-  padding:10px 15px;
-  font-size:16px;
+.song-controls button{
+  padding:8px 16px;
   border:none;
-  border-radius:50%;
-  background: rgba(255,255,255,0.9);
+  border-radius:15px;
+  background:#ffd6e8;
+  cursor:pointer;
+  margin:5px;
+  font-size:16px;
+}
+
+.song-title{
+  margin-top:6px;
+  font-size:18px;
+}
+
+/* ---------- QUOTES / PROMISES ---------- */
+
+.quote{
+  background:rgba(255,255,255,0.8);
+  margin:12px auto;
+  padding:16px;
+  border-radius:16px;
+  width:80%;
+  box-shadow:0 6px 16px rgba(0,0,0,0.15);
+}
+
+/* ---------- END QUOTE BOX ---------- */
+
+.end-quote{
+  margin:80px auto 40px;
+  max-width:320px;
+  padding:20px 24px;
+
+  font-size:20px;
+  line-height:1.5;
+  text-align:center;
+
+  color:#4b2e2e;
+  background:linear-gradient(145deg,#ffd6e8,#ffeaf4);
+
+  border-radius:26px;
+
+  box-shadow:
+    0 8px 20px rgba(255,182,193,0.35),
+    inset 0 0 8px rgba(255,255,255,0.6);
+
+  transition:0.4s;
+}
+
+.end-quote:hover{
+  transform:scale(1.03);
+}
+
+/* ---------- LETTER ---------- */
+
+.letter{
+  width:200px;
+  margin:10px;
   cursor:pointer;
 }
 
-.musicDetails{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  margin-top:8px;
+.letterText{
+  margin-top:15px;
+  width:80%;
+  font-size:18px;
 }
 
-.musicDetails h3{
-  font-size:16px;
-  margin-bottom:5px;
-  color:#333;
-}
+/* ---------- HEART RAIN ---------- */
 
-.musicControls{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:10px;
-}
-
-/* HEART RAIN */
-#heartRain span{
+.heartDrop{
   position:fixed;
   top:-20px;
-  animation:fall 6s linear;
+  animation:fall linear forwards;
 }
 
 @keyframes fall{
-  to{transform:translateY(110vh);}
+  to{
+    transform:translateY(110vh);
+    opacity:0;
+  }
 }
 
-.polaroidStack{
-  width:100%;
-  height:75vh;
-  overflow-y:auto;
+/* ---------- BUTTON ---------- */
 
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:40px;
-  padding-top:40px;
+button{
+  margin-top:20px;
+  padding:10px 18px;
+  border:none;
+  border-radius:18px;
+  background:#ffd6e8;
+  font-size:16px;
+  cursor:pointer;
 }
 
-.polaroidCard{
-  width:300px;
-  position:relative;
+/* ---------- MOBILE FIX ---------- */
 
-  filter: drop-shadow(0 18px 25px rgba(0,0,0,0.25));
-  transition:0.4s ease;
+@media(max-width:600px){
+
+  .menu-grid{
+    grid-template-columns:1fr;
+  }
+
+  .scroll img{
+    width:80%;
+  }
+
+  .song-card{
+    width:80%;
+  }
+
 }
-
-.polaroidCard img{
-  width:100%;
-  border-radius:8px;
-}
-
-.p1{
-  transform:rotate(-6deg);
-}
-
-.p2{
-  transform:rotate(5deg);
-  margin-top:-60px;
-}
-
-.p3{
-  transform:rotate(-4deg);
-  margin-top:-60px;
-}
-
-.p4{
-  transform:rotate(7deg);
-  margin-top:-60px;
-}
-
-.polaroidCard:hover{
-  transform:scale(1.06) rotate(0deg);
-}
-
-.end-quote{
-  margin: 90px auto 40px;
-  max-width: 320px;
-  padding: 20px 24px;
-
-  font-size: 20px;
-  line-height: 1.5;
-  text-align: center;
-
-  color: #4b2e2e;
-
-  /* Soft theme color */
-  background: linear-gradient(145deg, #ffd6e8, #ffeaf4);
-
-  border-radius: 26px;
-
-  box-shadow:
-    0 8px 20px rgba(255, 182, 193, 0.35),
-    inset 0 0 8px rgba(255,255,255,0.6);
-
-  transition: 0.4s ease;
-}
-
-/* Soft hover glow */
-.end-quote:hover{
-  transform: scale(1.03);
-  box-shadow:
-    0 12px 28px rgba(255, 182, 193, 0.5),
-    inset 0 0 10px rgba(255,255,255,0.7);
-}
-
-
-
