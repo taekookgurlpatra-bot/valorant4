@@ -5,8 +5,17 @@
 
 body{
   margin:0;
-  background:url("assets/bg-image.jpg") center/cover fixed;
+  min-height:100vh;
   overflow:hidden;
+  font-family:'Patrick Hand', cursive;
+
+  background-image: url("assets/bg-image.jpg?v=2");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-attachment: fixed;
+
+  background-color: #ffeef5;
 }
 
 /* PAGE */
@@ -225,5 +234,6 @@ body{
     0 12px 28px rgba(255, 182, 193, 0.5),
     inset 0 0 10px rgba(255,255,255,0.7);
 }
+
 
 
